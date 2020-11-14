@@ -1,0 +1,19 @@
+@import "../../../scss/utils/mixins";
+@import "../../../scss/utils/variables";
+
+.nav {
+  flex: 2;
+  margin-right: 3.25rem;
+  &__list {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 3.25rem;
+    align-items: center;
+    &--item {
+      .active {
+        color: $green;
+      }
+    }
+  }
+}

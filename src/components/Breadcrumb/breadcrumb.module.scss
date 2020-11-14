@@ -1,0 +1,29 @@
+@import "../../scss/utils/mixins";
+@import "../../scss/utils/variables";
+
+.breadcrumb {
+  width: 100%;
+  margin-bottom: 3rem;
+  margin-top: 87px;
+  &__list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    &--item {
+      position: relative;
+      display: inline;
+      &::after {
+        content: ">";
+        margin-left: 0.5rem;
+        display: inline;
+        @extend .small__light__txt;
+      }
+      &:last-child {
+        &::after {
+          content: none;
+        }
+      }
+    }
+  }
+}

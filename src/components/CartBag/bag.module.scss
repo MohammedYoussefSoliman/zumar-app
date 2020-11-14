@@ -1,0 +1,22 @@
+@import "../../scss/utils/mixins";
+@import "../../scss/utils/variables";
+
+.bag {
+  margin-right: 3.25rem;
+  position: relative;
+  &__qty {
+    position: absolute;
+    @include center-content-x;
+    top: 0;
+    right: 0;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: $red;
+    box-shadow: 0px 4px 11px 0px $red;
+    color: $white;
+    font-size: 0.5rem;
+    font-weight: 500;
+    transform: translate(50%, -25%);
+  }
+}

@@ -1,0 +1,137 @@
+@import "../../scss/utils/mixins";
+@import "../../scss/utils/variables";
+
+.product {
+  display: flex;
+  > * {
+    flex: 1;
+  }
+
+  &__prev {
+    height: 100%;
+    &--view {
+      width: 100%;
+    }
+    &--thumb {
+      width: 100%;
+      .thumb__list {
+        @include center-content-x;
+        gap: 1.25rem;
+        &--item {
+          width: 125px;
+          height: 105px;
+          border-radius: 20px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  &__details {
+    &--content {
+      margin-top: 2.5rem;
+      &.rating {
+        display: flex;
+        gap: 3.25rem;
+        align-items: center;
+        .stars {
+          display: flex;
+          gap: 0.5rem;
+        }
+      }
+
+      &.price {
+        display: flex;
+        gap: 3.25rem;
+      }
+
+      .detail {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 3.25rem;
+        margin-top: 1rem;
+        &__opt {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 20px;
+          border-radius: 10px;
+          img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+          }
+          small {
+            line-height: 2em;
+          }
+          &.selected {
+            background: $highlight;
+          }
+        }
+        &.shipping {
+          gap: 0;
+          margin-right: 0;
+          .detail__opt {
+            margin-right: 3.25rem;
+          }
+        }
+      }
+      &.storage {
+        .detail__opt {
+          align-items: flex-end;
+        }
+      }
+      .quantity {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+        margin-top: 1.5rem;
+        &__btn--group {
+          display: flex;
+          align-items: center;
+          .quantity--btn {
+            @include center-content-x;
+            border: none;
+            outline: none;
+            background: $highlight;
+            width: 50px;
+            height: 50px;
+            &:first-child {
+              border-radius: 50% 0 0 50%;
+            }
+            &:last-child {
+              border-radius: 0 50% 50% 0;
+            }
+          }
+        }
+      }
+      &.total {
+        margin-top: 0;
+        .total--title {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 2rem;
+        }
+        .total--btn--group {
+          display: flex;
+          .total--btn {
+            margin-right: 0.75rem;
+            @include center-content-x;
+            gap: 10px;
+            border: none;
+            outline: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+  }
+}
